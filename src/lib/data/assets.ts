@@ -2,8 +2,8 @@ import type { Asset } from '$lib/types';
 import { theme } from '$lib/stores/theme';
 import { base } from '$app/paths';
 
-const gh = (file: string) => `${base}/logos/${file}`;
-const ph = (file: string) => `${base}/projects/${file}`;
+const gh = (file: string) => `/logos/${file}`;
+const ph = (file: string) => `/projects/${file}`;
 
 const a = (light: string, dark?: string): Asset =>
 	dark ? { dark: gh(dark), light: gh(light) } : gh(light);
@@ -80,17 +80,6 @@ const Assets = {
 	JNV: a('JNV.svg')
 };
 
-type ProjectImages = string[];
-
-const ProjectAssets: Record<string, ProjectImages> = {
-	KaavuModernization: [
-		ph('Kaavu1.png'),
-		ph('Kaavu2.png'),
-		ph('Kaavu3.png')
-	]
-};
-
-export { ProjectAssets };
 
 export default Assets;
 

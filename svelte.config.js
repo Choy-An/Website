@@ -1,7 +1,8 @@
+//import { dev } from '$app/environment';
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
-const base = '/slick-portfolio-svelte';
+//const base = '/slick-portfolio-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -23,9 +24,7 @@ const config = {
 			'@stores': './src/lib/stores',
 			'@utils': './src/lib/utils'
 		},
-		paths: {
-			base: process.env.NODE_ENV === 'production' ? base : ''
-		}
+		
 	}
 };
 
