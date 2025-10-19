@@ -1,6 +1,5 @@
 import type { Asset } from '$lib/types';
 import { theme } from '$lib/stores/theme';
-import { base } from '$app/paths';
 
 const gh = (file: string) => `/logos/${file}`;
 const ph = (file: string) => `/projects/${file}`;
