@@ -89,10 +89,20 @@
 				{#if screenshots.length > 0}
 					<!-- Full-width seamless vertical scroll for screenshots -->
 					<div class="screenshots-scroll w-full">
-						{#each screenshots as item}
-							<img src={item.src} alt={item.label} />
-						{/each}
-					</div>
+	{#each screenshots as item}
+		<img
+			src={item.src}
+			alt={item.label || 'Project image'}
+			loading="lazy"
+			decoding="async"
+			width="1200"
+			height="800"
+			class="screenshot"
+			style="background-color: #111;"
+		/>
+	{/each}
+</div>
+
 				{:else}
 					<div class="p-5 col-center gap-3 m-y-auto text-[var(--border)]">
 						<UIcon icon="i-carbon-image" class="text-3.5em" />
@@ -110,12 +120,24 @@
 	flex-direction: column;
 }
 
-.screenshots-scroll img {
-	display: block;        /* removes inline spacing */
-	width: 100%;           /* full width */
-	height: auto;          /* keep aspect ratio */
-	margin: 0;             /* no gap */
-	padding: 0;            /* no padding */
-	border-radius: 0;      /* seamless look */
+.screenshot {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	border-radius: 0;
+	object-fit: cover;
+	background-color: #111;
+	filter: blur(10px);
+	transition: filter 0.4s ease-out, opacity 0.4s ease-out;
+	opacity: 0;
 }
+
+/* When image is loaded, clear blur + fade in */
+.screenshot[src] {
+	filter: blur(0);
+	opacity: 1;
+}
+
 </style>
