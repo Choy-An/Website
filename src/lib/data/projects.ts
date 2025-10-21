@@ -32,32 +32,71 @@ export const items: Array<Project> = [
 		period: {
 			from: new Date()
 		},
-		skills: getSkills('figma'),
+		skills: getSkills(''),
 		type: 'Tangible Data Visualization',
 		screenshots: [
 			{
-				label: 'screen 1',
-				src: 'https://images.unsplash.com/photo-1662947190722-5d272f82a526?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z29vZ2xlJTIwbG9nb3xlbnwwfHwwfHx8MA%3D%3D'
+				src: '/images/TDV1.webp'
 			},
 			{
-				label: '2',
-				src: 'https://s3.amazonaws.com/images.seroundtable.com/google-amp-1454071566.jpg'
+				src: '/images/TDV2.webp'
 			},
 			{
-				label: '3',
-				src: 'https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHByb2dyYW1taW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
+            	src: '/images/TDV3.webp'
 			},
 			{
-				label: '4',
-				src: 'https://images.unsplash.com/photo-1542903660-eedba2cda473?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2dyYW1taW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
+            	src: '/images/TDV4.webp'
 			},
 			{
-				label: '5',
-				src: 'https://images.unsplash.com/photo-1619410283995-43d9134e7656?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHByb2dyYW1taW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
+            	src: '/images/TDV5.webp'
 			},
 			{
-				label: '6',
-				src: 'https://media.glamourmagazine.co.uk/photos/6491ba42cb8e656c58bca81c/16:9/w_2580,c_limit/ELEMENTAL%20200623%20default-ELEMENTAL_ONLINE-USE-m328_152_pub.pub16.222.jpg'
+            	src: '/images/TDV6.webp'
+			},
+			{
+            	src: '/images/TDV7.webp'
+			},
+			{
+            	src: '/images/TDV8.webp'
+			},
+			{
+            	src: '/images/TDV9.webp'
+			},
+			{
+            	src: '/images/TDV10.webp'
+			},
+			{
+            	src: '/images/TDV11.webp'
+			},
+			{
+            	src: '/images/TDV12.webp'
+			},
+			{
+            	src: '/images/TDV13.webp'
+			},
+			{
+            	src: '/images/TDV14.webp'
+			},
+			{
+            	src: '/images/TDV15.webp'
+			},
+			{
+            	src: '/images/TDV16.webp'
+			},
+			{
+            	src: '/images/TDV17.webp'
+			},
+			{
+            	src: '/images/TDV18.webp'
+			},
+			{
+            	src: '/images/TDV19.webp'
+			},
+			{
+            	src: '/images/TDV20.webp'
+			},
+			{
+            	src: '/images/TDV21.webp'
 			}
 		]
 	},
@@ -68,13 +107,13 @@ export const items: Array<Project> = [
 			'An exploration of how Sacred Groves (Kaavus) in Kannur have transformed into built structures. The project studies their architecture and iconography, presented through research, case studies, and visual documentation.',
 		shortDescription:
 			'An exploration of how Sacred Groves (Kaavus) in Kannur have transformed into built structures. The project studies their architecture and iconography, presented through research, case studies, and visual documentation.',
-		links: [{ to: 'https://www.figma.com/proto/9dk0eMiRDPa7glw7eg5nPE/Design-Project-1-FINAL?node-id=606-3126&t=yoxQsNxJE4opes56-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=599%3A4740', label: 'Figma' }],
+		links: [{ to: 'https://www.figma.com/proto/9dk0eMiRDPa7glw7eg5nPE/Design-Project-1-FINAL?node-id=606-3126&t=yoxQsNxJE4opes56-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=599%3A4740', label: 'Figma Prototype' }],
 		logo: Assets.Figma,
 		name: 'Sacred Groves',
 		period: {
 			from: new Date()
 		},
-		skills: getSkills('figma'),
+		skills: getSkills(''),
 		type: 'Cultural Documentation & Digital Narrative',
 		screenshots: [
 			{
