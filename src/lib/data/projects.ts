@@ -78,71 +78,74 @@ export const items: Array<Project> = [
 		type: 'Cultural Documentation & Digital Narrative',
 		screenshots: [
 			{
-				src: 'https://i.ibb.co/DDx7sxg7/DP1.png'
+				src: '/images/DP1.webp'
 			},
 			{
-				src: 'https://i.ibb.co/962BZwL/DP2.png'
+				src: '/images/DP2.webp'
 			},
 			{
-            	src: 'https://i.ibb.co/VcqPdNjZ/DP3.png'
+            	src: '/images/DP3.webp'
 			},
 			{
-            	src: 'https://i.ibb.co/213xDZjC/DP4.png'
+            	src: '/images/DP4.webp'
 			},
 			{
-            	src: 'https://i.ibb.co/R44ThSWM/DP5.png'
+            	src: '/images/DP5.webp'
 			},
 			{
-            	src: 'https://i.ibb.co/Xx5sMgxc/DP6.png'
+            	src: '/images/DP6.webp'
 			},
 			{
-            	src: 'https://i.ibb.co/jkn3NLh8/DP7.png'
+            	src: '/images/DP7.webp'
 			},
 			{
-            	src: 'https://i.ibb.co/nsSnCD0d/DP8.png'
+            	src: '/images/DP8.webp'
 			},
 			{
-            	src: 'https://i.ibb.co/2YqXdr99/DP9.png'
+            	src: '/images/DP9.webp'
 			},
 			{
-            	src: 'https://i.ibb.co/b5YqcQcc/DP10.png'
+            	src: '/images/DP10.webp'
 			},
 			{
-            	src: 'https://i.ibb.co/cHd5vgW/DP11.png'
+            	src: '/images/DP11.webp'
 			},
 			{
-            	src: 'https://i.ibb.co/WZz26cS/DP12.png'
+            	src: '/images/DP12.webp'
 			},
 			{
-            	src: 'https://i.ibb.co/xKWqrcJZ/DP13.png'
+            	src: '/images/DP13.webp'
 			},
 			{
-            	src: 'https://i.ibb.co/bgrXkpK3/DP14.png'
+            	src: '/images/DP14.webp'
 			},
 			{
-            	src: 'https://i.ibb.co/kswjRZ5q/DP16.png'
+            	src: '/images/DP16.webp'
 			},
 			{
-            	src: 'https://i.ibb.co/yngfM3fJ/DP17.png'
+            	src: '/images/DP17.webp'
 			},
 			{
-            	src: 'https://i.ibb.co/5WcBF9VH/DP18.png'
+            	src: '/images/DP18.webp'
 			},
 			{
-            	src: 'https://i.ibb.co/dsjZ0p9r/DP19.png'
+            	src: '/images/DP19.webp'
 			},
 			{
-            	src: 'https://i.ibb.co/N6pHKfCL/DP20.png'
+            	src: '/images/DP20.webp'
 			},
 			{
-            	src: 'https://i.ibb.co/HfNdRTVH/DP21.png'
+            	src: '/images/DP21.webp'
 			},
 			{
-            	src: 'https://i.ibb.co/fVqMD8pR/DP22.png'
+            	src: '/images/DP22.webp'
 			},
 			{
-            	src: 'https://i.ibb.co/8LdCVxPK/DP23.png'
+            	src: '/images/DP23.webp'
 			},
+			{
+            	src: '/images/DP24.webp'
+			}
 		]
 	}
 ];
