@@ -18,6 +18,12 @@
 	export let data: { experience?: Experience };
 
 	$: computedTitle = data.experience ? `${data.experience.name} - ${title}` : title;
+
+	// Use this for screenshots
+	const screenshots = data.experience?.screenshots.map((s) => ({
+		...s,
+		src: getAssetURL(s.src)
+	})) ?? [];
 </script>
 
 <TabTitle title={computedTitle} />
@@ -25,7 +31,7 @@
 <div class="pb-10 overflow-x-hidden col flex-1">
 	{#if data.experience === undefined}
 		<div class="p-5 col-center gap-3 m-y-auto text-[var(--accent-text)]">
-			<UIcon icon="i-carbon-cube" classes="text-3.5em" />
+			<UIcon icon="i-carbon-cube" class="text-3.5em" />
 			<p class="font-300">Could not load experience data...</p>
 		</div>
 	{:else}
@@ -73,20 +79,53 @@
 					</div>
 				</div>
 			</Banner>
+
 			<div class="pt-3 pb-1 overflow-x-hidden w-full">
 				<div class="px-10px m-y-5">
 					{#if data.experience.description}
-						<Markdown
-							content={data.experience.description ?? 'This place is yet to be filled...'}
-						/>
+						<Markdown content={data.experience.description} />
 					{:else}
 						<div class="p-5 col-center gap-3 m-y-auto text-[var(--border)]">
-							<UIcon icon="i-carbon-text-font" classes="text-3.5em" />
+							<UIcon icon="i-carbon-text-font" class="text-3.5em" />
 							<p class="font-300">No description...</p>
 						</div>
 					{/if}
 				</div>
+
+				<div class="w-100% m-t-8">
+					<CardDivider />
+				</div>
+
+				{#if screenshots.length > 0}
+					<!-- Full-width seamless vertical scroll for screenshots -->
+					<div class="screenshots-scroll w-full">
+						{#each screenshots as item}
+							<img src={item.src} alt={item.label} />
+						{/each}
+					</div>
+				{:else}
+					<div class="p-5 col-center gap-3 m-y-auto text-[var(--border)]">
+						<UIcon icon="i-carbon-image" class="text-3.5em" />
+						<p class="font-300">No screenshots</p>
+					</div>
+				{/if}
 			</div>
 		</div>
 	{/if}
 </div>
+
+<style lang="scss">
+.screenshots-scroll {
+	display: flex;
+	flex-direction: column;
+}
+
+.screenshots-scroll img {
+	display: block;        /* removes inline spacing */
+	width: 100%;           /* full width */
+	height: auto;          /* keep aspect ratio */
+	margin: 0;             /* no gap */
+	padding: 0;            /* no padding */
+	border-radius: 0;      /* seamless look */
+}
+</style>
