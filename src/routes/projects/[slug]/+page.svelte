@@ -89,24 +89,46 @@
 				{#if screenshots.length > 0}
 					<!-- Full-width seamless vertical scroll for screenshots -->
 					<div class="screenshots-scroll w-full">
-	{#each screenshots as item}
-		<img
-			src={item.src}
-			alt={item.label || 'Project image'}
-			loading="lazy"
-			decoding="async"
-			width="1200"
-			height="800"
-			class="screenshot"
-			style="background-color: #111;"
-		/>
-	{/each}
-</div>
-
+						{#each screenshots as item}
+							<img
+								src={item.src}
+								alt={item.label || 'Project image'}
+								loading="lazy"
+								decoding="async"
+								width="1200"
+								height="800"
+								class="screenshot"
+								style="background-color: #111;"
+							/>
+						{/each}
+					</div>
 				{:else}
 					<div class="p-5 col-center gap-3 m-y-auto text-[var(--border)]">
 						<UIcon icon="i-carbon-image" class="text-3.5em" />
 						<p class="font-300">No screenshots</p>
+					</div>
+				{/if}
+
+				<!-- 🧩 Figma Prototype Embed -->
+				{#if data.project.prototype}
+					<div class="w-full aspect-video mt-8 mb-4 rounded-xl overflow-hidden shadow-lg">
+						<iframe
+							src={data.project.prototype}
+							allowfullscreen
+							class="w-full h-full border-0"
+							loading="lazy"
+						></iframe>
+					</div>
+
+					<!-- 🔗 View in Figma Button -->
+					<div class="text-center mt-3 mb-8">
+						<a
+							href={data.project.prototype.replace('embed?embed_host=share&', '')}
+							target="_blank"
+							class="inline-block text-blue-400 hover:text-blue-300 underline transition"
+						>
+							Open in Figma ↗
+						</a>
 					</div>
 				{/if}
 			</div>
@@ -139,5 +161,5 @@
 	filter: blur(0);
 	opacity: 1;
 }
-
 </style>
+

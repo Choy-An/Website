@@ -42,7 +42,8 @@ export const items: Array<Project> = [
 			{src: '/images/DP21.webp'},
 			{src: '/images/DP22.webp'},
 			{src: '/images/DP23.webp'}
-		]
+		],
+        prototype: 'https://www.figma.com/proto/9dk0eMiRDPa7glw7eg5nPE/Design-Project-1-FINAL?node-id=599-4740&p=f&t=2deVnKKAsMmYvZxT-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=599%3A4740https://embed.figma.com/proto/9dk0eMiRDPa7glw7eg5nPE/Design-Project-1-FINAL?node-id=599-4740&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=599%3A4740&embed-host=share', // your embed link here
 	},
 	{
 		slug: 'Project 2',
@@ -80,8 +81,14 @@ export const items: Array<Project> = [
 			{src: '/images/TDV18.webp'},
 			{src: '/images/TDV19.webp'},
 			{src: '/images/TDV20.webp'},
-			{src: '/images/TDV21.webp'}
-		]
+			{src: '/images/TDV21.webp'},
+			{src: '/images/TDV22.webp'},
+			{src: '/images/TDV23.webp'},
+			{src: '/images/TDV24.webp'},
+			{src: '/images/TDV25.webp'},
+			{src: '/images/TDV26.webp'}
+
+		],
 	},
 	{
 		slug: 'Project 3',
