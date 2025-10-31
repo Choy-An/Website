@@ -11,7 +11,7 @@ export const items: Array<Project> = [
 		shortDescription:
 			'An exploration of how Sacred Groves (Kaavus) in Kannur have transformed into built structures. The project studies their architecture and iconography, presented through research, case studies, and visual documentation.',
 		links: [{ to: 'https://www.figma.com/proto/9dk0eMiRDPa7glw7eg5nPE/Design-Project-1-FINAL?node-id=606-3126&t=yoxQsNxJE4opes56-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=599%3A4740', label: 'Figma Prototype' }],
-		logo: Assets.Figma,
+		logo: Assets.DP,
 		name: 'Sacred Groves',
 		period: {
 			from: new Date('2024-03-14'), to: new Date('2024-04-27')
@@ -53,7 +53,7 @@ export const items: Array<Project> = [
 		shortDescription:
 			'Biodiversity is vanishing at an alarming rate, with many species moving closer to extinction. This project visualizes the survival status of 24 selected species from India, chosen to reflect different habitats and IUCN Red List categories. Using a layered paper-cut lightbox, the arrangement shows species sinking deeper as their threat level rises, and color bands indicate population size. The work combines data and emotion to make the crisis of extinction tangible and immediate.',
 		links: [{ to: '', label: 'Video' }],
-		logo: Assets.Figma,
+		logo: Assets.Tangible,
 		name: 'Fading To Extinction',
 		period: {
 			from: new Date('2025-07-02'), to: new Date('2025-08-23') 
@@ -98,7 +98,7 @@ export const items: Array<Project> = [
 		shortDescription:
 			'This project visualizes the 2022 Hunga Tonga-Hunga Haʻapai eruption - from its underwater build-up to the record-breaking 57 km plume and its global aftermath. Using scientific records and satellite data, I built a timeline-based narrative with layered visuals and annotations to reveal how the volcano formed, evolved, and erupted, and to compare it with other historic eruptions.',
 		links: [{ to: '', label: 'GitHub' }],
-		logo: Assets.Figma,
+		logo: Assets.Hunga,
 		name: 'Hunga Tonga',
 		period: {
 			from: new Date('2025-06-17'), to: new Date('2025-06-30') 

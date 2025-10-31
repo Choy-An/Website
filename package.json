@@ -49,6 +49,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"dayjs": "^1.11.10"
+		"dayjs": "^1.11.10",
+		"framer-motion": "^12.23.24"
 	}
 }

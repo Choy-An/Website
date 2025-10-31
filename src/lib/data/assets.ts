@@ -35,7 +35,6 @@ const Assets = {
 	CSS: a('css.svg'),
 	AfterEffects: a('after-effects.svg'),
 	Illustrator: a('illustrator.svg'),
-	Nuxt: a('nuxt.png'),
 	Vite: a('vite.png'),
 	Vitest: a('vitest.svg'),
 	Postcss: a('postcss.svg'),
@@ -43,7 +42,14 @@ const Assets = {
 	SPA: a('SPA.svg'),
 	NID: a('NID.svg'),
 	JNV: a('JNV.svg'),
-	Chatgpt: a('ChatGPT.png')
+	Chatgpt: a('ChatGPT.png'),
+	Tangible: a('Tangible.png'),
+	DP: a('Kaavu.png'),
+	DPR: a('Yin Yang.png'),
+	DT: a('Tribute.png'),
+	SCR: a('mancity.png'),
+	Hunga: a('Hunga.png'),
+	AswanthC: a('AswanthC.png')
 };
 
 

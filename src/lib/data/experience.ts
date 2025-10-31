@@ -7,21 +7,21 @@ export const items: Array<Experience> = [
   slug: 'data-tribute',
   company: 'National Institute of Design',
   description:
-    'A visual homage to the datasets that shape our understanding of the world. This project explored the idea of **data as an emotional and cultural artifact**, visualized through symbolic forms and layered compositions inspired by tributary systems and flow networks.',
+    'A data-driven homage translating Ladislav Sutnar’s design principles into a living visual system that celebrates structure, clarity, and modernist rhythm.',
   shortDescription:
-    'A poetic visualization exploring data as emotional and cultural flow — inspired by tributary systems.',
+    'A data-driven homage translating Ladislav Sutnar’s design principles into a living visual system that celebrates structure, clarity, and modernist rhythm.',
   type: 'Data Visualization / Poster Design',
   location: 'Bangalore',
   period: { from: new Date('2024-02-01'), to: new Date('2024-02-08') },
   skills: getSkills('illustrator', 'photoshop', 'figma'),
   name: 'Data Tribute',
-  color: '#3B82F6', // Tailwind blue-500
+  color: 'red', // 
   links: [
     {
       label: ''
     }
   ],
-  logo: Assets.Figma,
+  logo: Assets.DT,
   screenshots: [
   {src: '/images/TP1.webp'},
 	{src: '/images/TP2.webp'},
@@ -47,21 +47,21 @@ export const items: Array<Experience> = [
   slug: 'data-portrait',
   company: 'National Institute of Design',
   description:
-    'A visual homage to the datasets that shape our understanding of the world. This project explored the idea of **data as an emotional and cultural artifact**, visualized through symbolic forms and layered compositions inspired by tributary systems and flow networks.',
+    'A Mahjong-inspired data visualization that transforms personal interests and traits into a layered spatial portrait — part game, part identity system.',
   shortDescription:
-    'A poetic visualization exploring data as emotional and cultural flow — inspired by tributary systems.',
+    'A Mahjong-inspired data visualization that transforms personal interests and traits into a layered spatial portrait — part game, part identity system.',
   type: 'Data Visualization / Poster Design',
   location: 'Bangalore',
   period: { from: new Date('2024-02-09'), to: new Date('2024-02-16') },
   skills: getSkills('illustrator', 'photoshop', 'figma'),
   name: 'Data Portrait',
-  color: '#ffff00', // Tailwind blue-500
+  color: 'yellow', // 
   links: [
     {
       label: ''
     }
   ],
-  logo: Assets.Figma,
+  logo: Assets.DPR,
   screenshots: [
     {src: '/images/DPR1.webp'},
 	{src: '/images/DPR2.webp'},
@@ -79,6 +79,42 @@ export const items: Array<Experience> = [
 	{src: '/images/DPR14.webp'},
 	{src: '/images/DPR15.webp'},
 	{src: '/images/DPR16.webp'},
+  ]
+},
+{
+  slug: 'Scrolly-telling',
+  company: 'National Institute of Design',
+  description:
+    'A data-driven visual narrative exploring how Manchester City’s rise after its oil-backed takeover blurs the line between money, merit, and modern football.',
+  shortDescription:
+    'A data-driven visual narrative exploring how Manchester City’s rise after its oil-backed takeover blurs the line between money, merit, and modern football.',
+  type: 'Data Narrative',
+  location: 'Bangalore',
+  period: { from: new Date('2024-02-17'), to: new Date('2024-02-28') },
+  skills: getSkills('illustrator', 'photoshop', 'figma'),
+  name: 'When Oil and Football Mix Well',
+  color: '2F87FF', // 
+  links: [
+    {
+      label: ''
+    }
+  ],
+  logo: Assets.SCR,
+  screenshots: [
+    {src: '/images/SCR 1.webp'},
+	{src: '/images/SCR 2.webp'},
+	{src: '/images/SCR 3.webp'},
+	{src: '/images/SCR 4.webp'},
+	{src: '/images/SCR 5.webp'},
+	{src: '/images/SCR 6.webp'},
+	{src: '/images/SCR 7.webp'},
+	{src: '/images/SCR 8.webp'},
+	{src: '/images/SCR 9.webp'},
+	{src: '/images/SCR 10.webp'},
+	{src: '/images/SCR 11.webp'},
+	{src: '/images/SCR 12.webp'},
+	{src: '/images/SCR 13.webp'},
+	{src: '/images/SCR 14.webp'},
   ]
 },
 

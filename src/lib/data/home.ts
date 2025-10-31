@@ -16,29 +16,12 @@ export const links: Array<{ platform: Platform; link: string }> = [
 	},
 	{
 		platform: Platform.Linkedin,
-		link: 'https://www.linkedin.com/'
+		link: 'https://www.linkedin.com/in/aswanthchoyan'
 	},
     {
         platform: Platform.Email,
-        link: 'mailto:aswanthchoyan@gmail.com',
-    },
-	{
-		//platform: Platform.Twitter,
-		link: 'https://twitter.com/'
-	},
-	
-	{
-		//platform: Platform.,
-		link: 'https://www.youtube.com'
-	},
-	{
-		//platform: Platform.Facebook,
-		//link: 'https://www.facebook.com'
-	},
-	{
-		//platform: Platform.StackOverflow,
-		link: 'https://stackoverflow.com/'
-	}
+        link: 'aswanthchoyan@gmail.com',
+    }
 ];
 
 export const skills = getSkills('figma', 'illustrator', 'photoshop', 'excel', 'html', 'css', 'js');
