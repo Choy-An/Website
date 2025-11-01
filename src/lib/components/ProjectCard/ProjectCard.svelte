@@ -7,27 +7,39 @@
 	import CardDivider from '../Card/CardDivider.svelte';
 	import ChipIcon from '../Chip/ChipIcon.svelte';
 	import CardLogo from '../Card/CardLogo.svelte';
+	import CardBanner from '../Card/CardBanner.svelte';
+	import UIcon from '../Icon/UIcon.svelte';
 	import type { Project } from '$lib/types';
 	import { getAssetURL } from '$lib/data/assets';
 	import { base } from '$app/paths';
-	import UIcon from '../Icon/UIcon.svelte';
 
 	export let project: Project;
+
+	// Compute duration and formatted dates
 	$: months = countMonths(project.period.from, project.period.to);
-	// $: period = `${months} month${months > 1 ? 's' : ''}`;
-	// $: period = `${getTimeDiff(
-	// 	project.period.from,
-	// 	project.period.to ?? new Date(Date.now() + 1000 * 60 * 60 * 24)
-	// )}`;
 	$: period = computeExactDuration(project.period.from, project.period.to);
 	$: from = `${getMonthName(project.period.from.getMonth())} ${project.period.from.getFullYear()}`;
 	$: to = project.period.to
 		? `${getMonthName(project.period.to.getMonth())} ${project.period.to.getFullYear()}`
 		: 'now';
+
+	// Check if project is not live
+	$: isWip = project.status && project.status !== 'live';
 </script>
 
-<Card color={project.color} href={`${base}/projects/${project.slug}`}>
-	<CardLogo alt={project.name} src={getAssetURL(project.logo)} size={40} radius={'0'} />
+<Card color={project.color} href={isWip ? undefined : `${base}/projects/${project.slug}`} class="relative">
+	{#if isWip}
+		<div class="status-overlay">
+			{project.status === 'wip' ? 'Work in Progress' : 'Coming Soon'}
+		</div>
+	{/if}
+
+	<CardBanner
+		src={getAssetURL(project.banner ?? project.logo)}
+		alt={project.name}
+		height="140px"
+	/>
+
 	<div class="m-t-20px row justify-between items-center">
 		<CardTitle title={project.name} />
 		<div class="row">
@@ -36,7 +48,9 @@
 			{/each}
 		</div>
 	</div>
+
 	<CardDivider />
+
 	<div class="col m-b-15px justify-between text-[var(--secondary-text)] text-0.85em">
 		<div class="row items-center gap-2">
 			<UIcon icon="i-carbon-assembly-cluster" classes="text-1.25em" />
@@ -49,18 +63,22 @@
 		</div>
 		<CardDivider />
 	</div>
+
 	<div class="col sm:h-100px md:h-160px">
 		<p class="text-[0.9em] text-[var(--secondary-text)] m-t-20px m-b-40px flex-1 line-clamp-3">
 			{project.shortDescription}
 		</p>
 	</div>
+
 	<div class="row justify-between text-0.8em font-400">
 		<Chip>{from}</Chip>
 		{#if from !== to}
 			<Chip>{to}</Chip>
 		{/if}
 	</div>
+
 	<CardDivider />
+
 	<div class="row flex-wrap">
 		{#each project.skills as tech}
 			<ChipIcon
@@ -71,3 +89,25 @@
 		{/each}
 	</div>
 </Card>
+
+<style>
+	/* Overlay for WIP / Locked projects */
+	.status-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.6);
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: bold;
+		font-size: 1.2em;
+		border-radius: 8px;
+		pointer-events: none;
+		text-align: center;
+		z-index: 10;
+	}
+</style>

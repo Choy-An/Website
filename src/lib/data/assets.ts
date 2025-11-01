@@ -49,7 +49,12 @@ const Assets = {
 	DT: a('Tribute.png'),
 	SCR: a('mancity.png'),
 	Hunga: a('Hunga.png'),
-	AswanthC: a('AswanthC.png')
+	AswanthC: a('AswanthC.png'),
+	Theyyam: a('Theyyam.png'),
+	Trial: a('trial.webp'),
+	Tangi: a('Tangi.png'),
+	Tonga: a('HungaTonga.png'),
+	Sacred: a('Sacred.png')
 };
 
 
