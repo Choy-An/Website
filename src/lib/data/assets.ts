@@ -55,7 +55,10 @@ const Assets = {
 	Tangi: a('Tangi.png'),
 	Tonga: a('HungaTonga.png'),
 	Sacred: a('Sacred.png'),
-	Aadhaar: a('Aadhaar.png')
+	Aadhaar: a('Aadhaar.png'),
+	KFON: a('KFON.png'),
+	Sketchup: a('Sketchup.svg'),
+	Procreate: a('Procreate.svg')
 };
 
 

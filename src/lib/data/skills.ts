@@ -71,7 +71,7 @@ export const items = [
 		slug: 'css',
 		color: 'blue',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+			'I dont have much experience  so most of the usage was done with the assistance of AI, it started as an experiment for a project but later found it interesting which translated to other tools such as svelte.',
 		logo: Assets.CSS,
 		name: 'CSS',
 		category: 'markup-style'
@@ -80,7 +80,7 @@ export const items = [
 		slug: 'html',
 		color: 'orange',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+			'Started alongside CSS its a must, i didnt much about it, but understood actually a website is online.',
 		logo: Assets.HTML,
 		name: 'HTML',
 		category: 'markup-style'
@@ -88,9 +88,25 @@ export const items = [
 	defineSkill({
 		slug: 'svelte',
 		color: 'orange',
-		description: svelte,
+		description: 'First heard under the interactive data narrative model, but from their it piqued my interest that along with the assistance of AI i tried my portfolio also in code using svelete.',
 		logo: Assets.Svelte,
 		name: 'Svelte',
+		category: 'library'
+	}),
+	defineSkill({
+		slug: 'sketchup',
+		color: 'blue',
+		description: 'My primary 3D software, which i picked up from my bachelors alongside many other, but the simple UI and features definitely helped in many ways, in design also i have used it, not as excessive but defineitely yes for small models and such.',
+		logo: Assets.Sketchup,
+		name: 'SketchUp',
+		category: 'library'
+	}),
+	defineSkill({
+		slug: 'procreate',
+		color: 'black',
+		description: 'Another tool that i started after coming to NID, used for skething primarily, but have used it for ideating icons and such also.',
+		logo: Assets.Procreate,
+		name: 'Procreate',
 		category: 'library'
 	})
 ] as const;

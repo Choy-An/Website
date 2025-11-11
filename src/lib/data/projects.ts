@@ -17,7 +17,7 @@ export const items: Array<Project> = [
 		period: {
 			from: new Date('2024-03-14'), to: new Date('2024-04-27')
 		},
-		skills: getSkills('figma', 'illustrator','photoshop'),
+		skills: getSkills('figma', 'illustrator','photoshop','procreate','sketchup'),
 		type: 'Cultural Documentation & Digital Narrative',
 		screenshots: [
 			{src: '/images/DP1.webp'},
@@ -60,7 +60,7 @@ export const items: Array<Project> = [
 		period: {
 			from: new Date('2025-07-02'), to: new Date('2025-08-23') 
 		},
-		skills: getSkills('figma', 'illustrator','photoshop'),
+		skills: getSkills('figma', 'illustrator','photoshop','procreate'),
 		type: 'Tangible Data Visualization',
 		screenshots: [
 			{src: '/images/TDV1.webp'},
@@ -104,7 +104,7 @@ export const items: Array<Project> = [
 		logo: Assets.Tangible,
 		name: 'mAadhaar: Case Study',
 		period: {
-			from: new Date('2024-07-02'), to: new Date('2024-08-23') 
+			from: new Date('2024-10-05'), to: new Date('2024-10-18') 
 		},
 		skills: getSkills('figma', 'illustrator','photoshop'),
 		type: 'UI/UX Case Study',
@@ -157,17 +157,17 @@ export const items: Array<Project> = [
 		slug: 'Project 5',
 		color: '#5e95e3',
 		description:
-			'This project visualizes the 2022 Hunga Tonga-Hunga Haʻapai eruption - from its underwater build-up to the record-breaking 57 km plume and its global aftermath. Using scientific records and satellite data, I built a timeline-based narrative with layered visuals and annotations to reveal how the volcano formed, evolved, and erupted, and to compare it with other historic eruptions.',
+			'A complete redesign of Kerala Fiber Optic Network’s digital platform, focused on improving accessibility, trust, and clarity for users across home, corporate, and institutional broadband services. The project enhances visual hierarchy, streamlines service discovery, and establishes a consistent design language rooted in Kerala’s digital development ethos. The goal was to move away from a purely bureaucratic look and create a user-centered interface that reflects transparency, reliability, and modern connectivity.',
 		shortDescription:
-			'This project visualizes the 2022 Hunga Tonga-Hunga Haʻapai eruption - from its underwater build-up to the record-breaking 57 km plume and its global aftermath. Using scientific records and satellite data, I built a timeline-based narrative with layered visuals and annotations to reveal how the volcano formed, evolved, and erupted, and to compare it with other historic eruptions.',
+			'A complete redesign of Kerala Fiber Optic Network’s digital platform, focused on improving accessibility, trust, and clarity for users across home, corporate, and institutional broadband services. The project enhances visual hierarchy, streamlines service discovery, and establishes a consistent design language rooted in Kerala’s digital development ethos. The goal was to move away from a purely bureaucratic look and create a user-centered interface that reflects transparency, reliability, and modern connectivity.',
 		links: [{ to: '', label: 'Figma' }],
-		banner: Assets.Tonga,
+		banner: Assets.KFON,
 		logo: Assets.Hunga,
 		name: 'KFON',
 		period: {
 			from: new Date('2025-09-21'), to: new Date()
 		},
-		skills: getSkills('figma', 'css', 'html','svelte'),
+		skills: getSkills('figma'),
 		type: 'Service Re-Design',
 		status: 'wip'
 	}
