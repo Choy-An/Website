@@ -5,17 +5,16 @@
 	import SearchPage from '$lib/components/SearchPage.svelte';
 	import { getAssetURL } from '$lib/data/assets';
 
-	import { title, items } from '@data/education';
+	import { items } from '@data/education';
 	import type { Education } from '$lib/types';
-	import { computeExactDuration, getTimeDiff } from '$lib/utils';
+	import { computeExactDuration } from '$lib/utils';
 	import CardDivider from '$lib/components/Card/CardDivider.svelte';
 
 	let search = '';
-
 	let result: Array<Education> = items;
 
 	const onSearch = (ev: CustomEvent<{ search: string }>) => {
-		const s = ev.detail.search;
+		const s = ev.detail.search.toLowerCase();
 
 		result = items.filter((it) => {
 			return (
@@ -24,13 +23,14 @@
 				it.location.toLowerCase().includes(s) ||
 				it.name.toLowerCase().includes(s) ||
 				it.organization.toLowerCase().includes(s) ||
-				it.subjects.some((it) => it.toLowerCase().includes(s))
+				it.subjects.some((sub) => sub.toLowerCase().includes(s))
 			);
 		});
 	};
 </script>
 
-<SearchPage {title} {search} on:search={onSearch}>
+<!-- Removed {title} and adjusted SearchPage -->
+<SearchPage {search} on:search={onSearch}>
 	<div class="col items-center relative mt-10 flex-1">
 		{#if result.length === 0}
 			<div class="p-5 col-center gap-3 m-y-auto text-[var(--accent-text)] flex-1">

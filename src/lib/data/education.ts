@@ -2,19 +2,6 @@ import Assets from './assets';
 import type { Education } from '../types';
 
 export const items: Array<Education> = [
-
-	{
-		degree: 'Aswanth C',
-		description: '',
-		location: 'Thalassery, Kerala',
-		logo: Assets.AswanthC,
-		name: '',
-		organization: 'Information Designer, Urban Planner',
-		period: { from: new Date(2000, 11, 11), to: new Date() },
-		shortDescription: '',
-		slug: 'dummy-education-item',
-		subjects: ['Reading', 'Football', 'Volleyball', 'Creative Coding', 'Cooking', 'Cycling', 'Driving']
-	},
 	{
 		degree: 'M.Des in Information Design',
 		description: '',
@@ -25,7 +12,16 @@ export const items: Array<Education> = [
 		period: { from: new Date(2024, 6, 1), to: new Date() },
 		shortDescription: '',
 		slug: 'dummy-education-item-2',
-		subjects: ['Data Visualization','Information Visualization', 'UI/UX', 'Information Architecture','Wireframing','Prototyping','Service Design', 'Human Centric Design']
+		subjects: [
+			'Data Visualization',
+			'Information Visualization',
+			'UI/UX',
+			'Information Architecture',
+			'Wireframing',
+			'Prototyping',
+			'Service Design',
+			'Human Centric Design'
+		]
 	},
 	{
 		degree: 'Bachelor of Planning',
@@ -37,7 +33,14 @@ export const items: Array<Education> = [
 		period: { from: new Date(2019, 6, 1), to: new Date(2023, 5, 30) },
 		shortDescription: '',
 		slug: 'dummy-education-item-3',
-		subjects: ['Data Collection and Analysis', 'Urban Planning','Cartography','Urban Visualisations', 'Sustainable Design', '3D Modeling']
+		subjects: [
+			'Data Collection and Analysis',
+			'Urban Planning',
+			'Cartography',
+			'Urban Visualisations',
+			'Sustainable Design',
+			'3D Modeling'
+		]
 	},
 	{
 		degree: 'High School',
@@ -53,4 +56,3 @@ export const items: Array<Education> = [
 	}
 ];
 
-export const title = 'Hello';
