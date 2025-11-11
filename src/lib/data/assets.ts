@@ -54,7 +54,8 @@ const Assets = {
 	Trial: a('trial.webp'),
 	Tangi: a('Tangi.png'),
 	Tonga: a('HungaTonga.png'),
-	Sacred: a('Sacred.png')
+	Sacred: a('Sacred.png'),
+	Aadhaar: a('Aadhaar.png')
 };
 
 

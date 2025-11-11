@@ -5,7 +5,7 @@ import type { Project } from '../types';
 export const items: Array<Project> = [
 	{
 		slug: 'Project 1',
-		color: '#ffff00',
+		color: 'red',
 		description:
 			'An exploration of how Sacred Groves (Kaavus) in Kannur have transformed into built structures. The project studies their architecture and iconography, presented through research, case studies, and visual documentation.',
 		shortDescription:
@@ -48,7 +48,7 @@ export const items: Array<Project> = [
 	},
 	{
 		slug: 'Project 2',
-		color: '#ff3e00',
+		color: 'yellow',
 		description:
 			'Biodiversity is vanishing at an alarming rate, with many species moving closer to extinction. This project visualizes the survival status of 24 selected species from India, chosen to reflect different habitats and IUCN Red List categories. Using a layered paper-cut lightbox, the arrangement shows species sinking deeper as their threat level rises, and color bands indicate population size. The work combines data and emotion to make the crisis of extinction tangible and immediate.',
 		shortDescription:
@@ -87,13 +87,56 @@ export const items: Array<Project> = [
 			{src: '/images/TDV22.webp'},
 			{src: '/images/TDV23.webp'},
 			{src: '/images/TDV24.webp'},
+			{src: '/images/TDV27.webp'},
 			{src: '/images/TDV25.webp'},
 			{src: '/images/TDV26.webp'}
-
 		],
 	},
-	{
+		{
 		slug: 'Project 3',
+		color: '#2F87FF',
+		description:
+			'Redesign of the mAadhaar app aimed at improving usability, trust, and accessibility in India’s digital identity system. The project refined key user flows like address updates & verification through a clean, consistent interface. Developed collaboratively under industry guidance, it strengthened my understanding of end-to-end UX processes and design systems.',
+		shortDescription:
+			'Redesign of the mAadhaar app aimed at improving usability, trust, and accessibility in India’s digital identity system. The project refined key user flows like address updates & verification through a clean, consistent interface.',
+		links: [{ to: 'https://www.figma.com/proto/1DCepfwiBkdBuw6riiw67b/Maadhaar?node-id=18-19677&p=f&t=SaCY1D8GKog1VczK-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=18%3A19677', label: 'Figma Prototype' }],
+		banner: Assets.Aadhaar,
+		logo: Assets.Tangible,
+		name: 'mAadhaar: Case Study',
+		period: {
+			from: new Date('2024-07-02'), to: new Date('2024-08-23') 
+		},
+		skills: getSkills('figma', 'illustrator','photoshop'),
+		type: 'UI/UX Case Study',
+		screenshots: [
+			{src: '/images/mdr1.webp'},
+			{src: '/images/mdr2.webp'},
+			{src: '/images/mdr3.webp'},
+			{src: '/images/mdr4.webp'},
+			{src: '/images/mdr5.webp'},
+			{src: '/images/mdr6.webp'},
+			{src: '/images/mdr7.webp'},
+			{src: '/images/mdr8.webp'},
+			{src: '/images/mdr9.webp'},
+			{src: '/images/mdr10.webp'},
+			{src: '/images/mdr11.webp'},
+			{src: '/images/mdr12.webp'},
+			{src: '/images/mdr13.webp'},
+			{src: '/images/mdr14.webp'},
+			{src: '/images/mdr15.webp'},
+			{src: '/images/mdr16.webp'},
+			{src: '/images/mdr17.webp'},
+			{src: '/images/mdr18.webp'},
+			{src: '/images/mdr19.webp'},
+			{src: '/images/mdr20.webp'},
+			{src: '/images/mdr21.webp'},
+			{src: '/images/mdr22.webp'},
+			{src: '/images/mdr23.webp'},
+		],
+		prototype: 'https://embed.figma.com/proto/1DCepfwiBkdBuw6riiw67b/Maadhaar?node-id=34-8079&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=18%3A19677&embed-host=share' // your embed link here
+	},
+	{
+		slug: 'Project 4',
 		color: '#5e95e3',
 		description:
 			'This project visualizes the 2022 Hunga Tonga-Hunga Haʻapai eruption - from its underwater build-up to the record-breaking 57 km plume and its global aftermath. Using scientific records and satellite data, I built a timeline-based narrative with layered visuals and annotations to reveal how the volcano formed, evolved, and erupted, and to compare it with other historic eruptions.',
@@ -108,6 +151,24 @@ export const items: Array<Project> = [
 		},
 		skills: getSkills('figma', 'css', 'html','svelte'),
 		type: 'Data-Driven Narrative',
+		status: 'wip'
+	},
+	{
+		slug: 'Project 5',
+		color: '#5e95e3',
+		description:
+			'This project visualizes the 2022 Hunga Tonga-Hunga Haʻapai eruption - from its underwater build-up to the record-breaking 57 km plume and its global aftermath. Using scientific records and satellite data, I built a timeline-based narrative with layered visuals and annotations to reveal how the volcano formed, evolved, and erupted, and to compare it with other historic eruptions.',
+		shortDescription:
+			'This project visualizes the 2022 Hunga Tonga-Hunga Haʻapai eruption - from its underwater build-up to the record-breaking 57 km plume and its global aftermath. Using scientific records and satellite data, I built a timeline-based narrative with layered visuals and annotations to reveal how the volcano formed, evolved, and erupted, and to compare it with other historic eruptions.',
+		links: [{ to: '', label: 'Figma' }],
+		banner: Assets.Tonga,
+		logo: Assets.Hunga,
+		name: 'KFON',
+		period: {
+			from: new Date('2025-09-21'), to: new Date()
+		},
+		skills: getSkills('figma', 'css', 'html','svelte'),
+		type: 'Service Re-Design',
 		status: 'wip'
 	}
 ];
