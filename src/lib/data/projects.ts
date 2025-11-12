@@ -10,7 +10,7 @@ export const items: Array<Project> = [
 			'An exploration of how Sacred Groves (Kaavus) in Kannur have transformed into built structures. The project studies their architecture and iconography, presented through research, case studies, and visual documentation.',
 		shortDescription:
 			'An exploration of how Sacred Groves (Kaavus) in Kannur have transformed into built structures. The project studies their architecture and iconography, presented through research, case studies, and visual documentation.',
-		links: [{ to: 'https://www.figma.com/proto/9dk0eMiRDPa7glw7eg5nPE/Design-Project-1-FINAL?node-id=606-3126&t=yoxQsNxJE4opes56-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=599%3A4740', label: 'Figma Prototype' }],
+		links: [{ to: 'https://www.figma.com/proto/00XBqRMcsbuV0xD8Ef61CA/Design-Project-1?node-id=653-3833&t=ZAEg6yrKUbS6j3P1-0&scaling=scale-down&content-scaling=fixed&page-id=653%3A3832', label: 'Figma Prototype' }],
 		banner: Assets.Sacred,
 		logo: Assets.T,
 		name: 'Sacred Groves',
@@ -42,9 +42,10 @@ export const items: Array<Project> = [
 			{src: '/images/DP20.webp'},
 			{src: '/images/DP21.webp'},
 			{src: '/images/DP22.webp'},
-			{src: '/images/DP23.webp'}
+			{src: '/images/DP23.webp'},
+			{src: '/images/DP24.webp'}
 		],
-        prototype: 'https://www.figma.com/proto/9dk0eMiRDPa7glw7eg5nPE/Design-Project-1-FINAL?node-id=599-4740&p=f&t=2deVnKKAsMmYvZxT-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=599%3A4740https://embed.figma.com/proto/9dk0eMiRDPa7glw7eg5nPE/Design-Project-1-FINAL?node-id=599-4740&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=599%3A4740&embed-host=share', // your embed link here
+        prototype: 'https://embed.figma.com/proto/00XBqRMcsbuV0xD8Ef61CA/Design-Project-1?node-id=653-3833&scaling=scale-down&content-scaling=fixed&page-id=653%3A3832&embed-host=share" ', // your embed link here
 	},
 	{
 		slug: 'Project 2',
@@ -132,11 +133,119 @@ export const items: Array<Project> = [
 			{src: '/images/mdr21.webp'},
 			{src: '/images/mdr22.webp'},
 			{src: '/images/mdr23.webp'},
+			{src: '/images/mdr24.webp'},
+			{src: '/images/mdr25.webp'}
 		],
 		prototype: 'https://embed.figma.com/proto/1DCepfwiBkdBuw6riiw67b/Maadhaar?node-id=34-8079&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=18%3A19677&embed-host=share' // your embed link here
 	},
-	{
+		{
 		slug: 'Project 4',
+		color: '#6CADDF',
+		description:
+			'A data-driven visual narrative exploring how Manchester City’s rise after its oil-backed takeover blurs the line between money, merit, and modern football.',
+		shortDescription:
+			'A data-driven visual narrative exploring how Manchester City’s rise after its oil-backed takeover blurs the line between money, merit, and modern football.',
+		links: [{ to: 'https://www.figma.com/proto/grWIb4302eVaONUGJPd6fN/Project?node-id=144-2&t=Lgw80jeBNdE8IcQ9-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1', label: 'Preview' }],
+		banner: Assets.Manc,
+		logo: Assets.Tangible,
+		name: 'Oil and Football',
+		period: {
+			from: new Date('2024-02-17'), to: new Date('2024-02-28') 
+		},
+		skills: getSkills('figma', 'illustrator','photoshop'),
+		type: 'Data Narrative',
+		screenshots: [
+			 {src: '/images/SCR 1.webp'},
+	{src: '/images/SCR 2.webp'},
+	{src: '/images/SCR 3.webp'},
+	{src: '/images/SCR 4.webp'},
+	{src: '/images/SCR 5.webp'},
+	{src: '/images/SCR 6.webp'},
+	{src: '/images/SCR 7.webp'},
+	{src: '/images/SCR 8.webp'},
+	{src: '/images/SCR 9.webp'},
+	{src: '/images/SCR 10.webp'},
+	{src: '/images/SCR 11.webp'},
+	{src: '/images/SCR 12.webp'},
+	{src: '/images/SCR 13.webp'},
+	{src: '/images/SCR 14.webp'},
+		],
+	},
+		{
+		slug: 'Project 5',
+		color: '#008000',
+		description:
+			'A Mahjong-inspired data visualization that transforms personal interests and traits into a layered spatial portrait — part game, part identity system.',
+		shortDescription:
+			'A Mahjong-inspired data visualization that transforms personal interests and traits into a layered spatial portrait — part game, part identity system.',
+		links: [{ to: 'https://drive.google.com/file/d/1xb7szNGbRnfpfBtnN88_86AKYkxlrAuv/view?pli=1', label: 'Poster' }],
+		banner: Assets.Port,
+		logo: Assets.Tangible,
+		name: 'Data Portrait',
+		period: {
+			from: new Date('2024-02-09'), to: new Date('2024-02-16')
+		},
+		skills: getSkills('figma', 'illustrator','photoshop'),
+		type: 'Data Visualization / Poster Design',
+		screenshots: [
+			 {src: '/images/DPR1.webp'},
+	{src: '/images/DPR2.webp'},
+	{src: '/images/DPR3.webp'},
+	{src: '/images/DPR4.webp'},
+	{src: '/images/DPR5.webp'},
+	{src: '/images/DPR6.webp'},
+	{src: '/images/DPR7.webp'},
+	{src: '/images/DPR8.webp'},
+	{src: '/images/DPR9.webp'},
+	{src: '/images/DPR10.webp'},
+	{src: '/images/DPR11.webp'},
+	{src: '/images/DPR12.webp'},
+	{src: '/images/DPR13.webp'},
+	{src: '/images/DPR14.webp'},
+	{src: '/images/DPR15.webp'},
+	{src: '/images/DPR16.webp'},
+		],
+		
+	},
+		{
+		slug: 'Project 6',
+		color: '#FFA500',
+		description:
+			'A data-driven homage translating Ladislav Sutnar’s design principles into a living visual system that celebrates structure, clarity, and modernist rhythm.',
+		shortDescription:
+			'A data-driven homage translating Ladislav Sutnar’s design principles into a living visual system that celebrates structure, clarity, and modernist rhythm.',
+		links: [{ to: 'https://drive.google.com/file/d/1rMXQvdzoZz49m5JpH3ioTcjRPgSpPvrm/view?usp=drive_link', label: 'Poster' }],
+		banner: Assets.Sutnar,
+		logo: Assets.Tangible,
+		name: 'Sutnar: Data Tribute',
+		period: {
+			from: new Date('2024-02-01'), to: new Date('2024-02-08')
+		},
+		skills: getSkills('figma', 'illustrator','photoshop'),
+		type: 'Data Visualization/Poster',
+		screenshots: [
+			{src: '/images/TP1.webp'},
+	{src: '/images/TP2.webp'},
+	{src: '/images/TP3.webp'},
+	{src: '/images/TP4.webp'},
+	{src: '/images/TP5.webp'},
+	{src: '/images/TP6.webp'},
+	{src: '/images/TP7.webp'},
+	{src: '/images/TP8.webp'},
+	{src: '/images/TP9.webp'},
+	{src: '/images/TP10.webp'},
+	{src: '/images/TP11.webp'},
+	{src: '/images/TP12.webp'},
+	{src: '/images/TP13.webp'},
+	{src: '/images/TP14.webp'},
+	{src: '/images/TP15.webp'},
+	{src: '/images/TP16.webp'},
+	{src: '/images/TP17.webp'},
+	{src: '/images/TP18.webp'},
+		],
+	},
+	{
+		slug: 'Project 7',
 		color: '#5e95e3',
 		description:
 			'This project visualizes the 2022 Hunga Tonga-Hunga Haʻapai eruption - from its underwater build-up to the record-breaking 57 km plume and its global aftermath. Using scientific records and satellite data, I built a timeline-based narrative with layered visuals and annotations to reveal how the volcano formed, evolved, and erupted, and to compare it with other historic eruptions.',
@@ -154,7 +263,7 @@ export const items: Array<Project> = [
 		status: 'wip'
 	},
 	{
-		slug: 'Project 5',
+		slug: 'Project 8',
 		color: '#5e95e3',
 		description:
 			'A complete redesign of Kerala Fiber Optic Network’s digital platform, focused on improving accessibility, trust, and clarity for users across home, corporate, and institutional broadband services. The project enhances visual hierarchy, streamlines service discovery, and establishes a consistent design language rooted in Kerala’s digital development ethos. The goal was to move away from a purely bureaucratic look and create a user-centered interface that reflects transparency, reliability, and modern connectivity.',

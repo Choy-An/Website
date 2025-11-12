@@ -58,7 +58,10 @@ const Assets = {
 	Aadhaar: a('Aadhaar.png'),
 	KFON: a('KFON.png'),
 	Sketchup: a('Sketchup.svg'),
-	Procreate: a('Procreate.svg')
+	Procreate: a('Procreate.svg'),
+	Manc: a('Manc.png'),
+	Port: a('Port.png'),
+	Sutnar: a('Sutnar.png')
 };
 
 

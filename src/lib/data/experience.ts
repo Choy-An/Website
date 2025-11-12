@@ -52,7 +52,7 @@ export const items: Array<Experience> = [
     'A Mahjong-inspired data visualization that transforms personal interests and traits into a layered spatial portrait — part game, part identity system.',
   type: 'Data Visualization / Poster Design',
   location: 'Bangalore',
-  period: { from: new Date('2024-02-09'), to: new Date('2024-02-16') },
+  period: { from: new Date },
   skills: getSkills('illustrator', 'photoshop', 'figma'),
   name: 'Data Portrait',
   color: 'yellow', // 

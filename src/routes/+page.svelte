@@ -22,8 +22,10 @@
 	let projectSection: HTMLElement;
 	let skillsVisible = false;
 	let skillsSection: HTMLElement;
+	let canvasEl: HTMLCanvasElement;
 
 	onMount(() => {
+		// Intersection Observers
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
@@ -49,21 +51,83 @@
 			{ threshold: 0.3 }
 		);
 		if (skillsSection) skillObserver.observe(skillsSection);
+
+		// Canvas Shooting Star Effect
+		const ctx = canvasEl.getContext('2d');
+		let particles: any[] = [];
+		let mouse = { x: 0, y: 0 };
+
+		const colors = [
+			['#ff0055', '#ff77aa'], // neon pink gradient
+			['#00d9ff', '#0077ff'], // neon cyan gradient
+		];
+
+		window.addEventListener('mousemove', (e) => {
+			mouse.x = e.clientX;
+			mouse.y = e.clientY;
+			for (let i = 0; i < 2; i++) {
+				const [c1, c2] = colors[Math.floor(Math.random() * colors.length)];
+				particles.push({
+					x: mouse.x - 10 + Math.random() * 5, // closer to cursor
+					y: mouse.y - 10 + Math.random() * 5,
+					size: Math.random() * 1.8 + 0.8,
+					color1: c1,
+					color2: c2,
+					length: Math.random() * 15 + 8, // comet streak length
+					speedX: (Math.random() - 0.5) * 2.2,
+					speedY: (Math.random() - 0.5) * 2.2,
+					life: 90,
+				});
+			}
+		});
+
+		function animate() {
+			if (!ctx) return;
+			ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
+			for (let i = particles.length - 1; i >= 0; i--) {
+				const p = particles[i];
+				p.x += p.speedX;
+				p.y += p.speedY;
+				p.life--;
+
+				// Trail gradient
+				const grad = ctx.createLinearGradient(p.x, p.y, p.x - p.length, p.y - p.length);
+				grad.addColorStop(0, p.color1);
+				grad.addColorStop(1, p.color2);
+
+				ctx.beginPath();
+				ctx.strokeStyle = grad;
+				ctx.lineWidth = p.size;
+				ctx.moveTo(p.x, p.y);
+				ctx.lineTo(p.x - p.length * 0.7, p.y - p.length * 0.7);
+				ctx.stroke();
+				ctx.closePath();
+
+				if (p.life <= 0) particles.splice(i, 1);
+			}
+			requestAnimationFrame(animate);
+		}
+
+		function resizeCanvas() {
+			canvasEl.width = window.innerWidth;
+			canvasEl.height = window.innerHeight;
+		}
+		window.addEventListener('resize', resizeCanvas);
+		resizeCanvas();
+		animate();
 	});
 </script>
 
-<svelte:head>
-	<title>{useTitle(title, titleSuffix)}</title>
-</svelte:head>
+<!-- HERO SECTION -->
+<section class="hero relative min-h-screen flex flex-col md:flex-row justify-center lg:justify-between items-center p-10 overflow-hidden">
+	<canvas bind:this={canvasEl} class="absolute inset-0 pointer-events-none z-0"></canvas>
 
-<!-- 🟩 HERO / LANDING SECTION -->
-<section class="min-h-screen flex flex-col md:flex-row justify-center lg:justify-between items-center p-10">
-	<div class="md:flex-1 gap-10px">
-		<h1 class="dynamic-name md:text-left text-[3.5rem] font-bold mb-3 leading-none">
+	<div class="relative z-10 md:flex-1 gap-10px">
+		<h1 class="dynamic-name md:text-left text-[3.8rem] md:text-[4.2rem] font-bold mb-5 leading-[1.1] overflow-visible">
 			{name} {lastName},
 		</h1>
 
-		<p class="text-[var(--tertiary-text)] text-center md:text-left text-[1.2em] font-extralight">
+		<p class="text-[var(--tertiary-text)] text-center md:text-left text-[1.2em] font-extralight max-w-lg leading-relaxed">
 			{description}
 		</p>
 
@@ -81,39 +145,40 @@
 		</div>
 	</div>
 
-	<!-- 🧩 Skill Grid with animation -->
+	<!-- Skills -->
 	<div
 		bind:this={skillsSection}
-		class="grid grid-cols-3 gap-5 mt-10 ml-8 w-full max-w-md justify-items-center"
+		class="grid grid-cols-3 gap-5 mt-10 ml-8 w-full max-w-md justify-items-center relative z-10"
 	>
+		<img
+			src="/aswanth.png"
+			alt="Aswanth"
+			class="absolute inset-0 w-full h-full object-cover opacity-0 hover:opacity-10 transition-opacity duration-700 ease-in-out pointer-events-none rounded-xl"
+			draggable="false"
+		/>
+
 		{#each skillsItems.slice(0, 9) as skill, i}
 			<div
 				class="skill-card flex flex-col items-center justify-center p-3 rounded-lg 
 				bg-[var(--background-secondary)] hover:bg-[var(--background-tertiary)] 
-				shadow-sm hover:shadow-md transition-all duration-500 ease-out cursor-default 
-				w-[90px] h-[90px]"
-				style="
-					opacity: {skillsVisible ? 1 : 0};
-					transform: translate(
-						{skillsVisible
-							? 0
-							: i % 4 === 0
-							? '-40px'
-							: i % 4 === 1
-							? '40px'
-							: i % 4 === 2
-							? '0px'
-							: '0px'},
-						{skillsVisible
-							? 0
-							: i % 4 === 2
-							? '-40px'
-							: i % 4 === 3
-							? '40px'
-							: '0px'}
-					);
-					transition-delay: all 0.8s ease-out;
-				"
+				shadow-sm hover:shadow-md transition-all duration-700 ease-out cursor-default 
+				w-[90px] h-[90px] relative"
+				style="opacity: {skillsVisible ? 1 : 0}; transform: translate(
+					{skillsVisible
+						? 0
+						: i % 4 === 0
+						? '-40px'
+						: i % 4 === 1
+						? '40px'
+						: '0px'},
+					{skillsVisible
+						? 0
+						: i % 4 === 2
+						? '-40px'
+						: i % 4 === 3
+						? '40px'
+						: '0px'}
+				); transition-delay: {i * 0.1}s;"
 			>
 				<img src={skill.logo} alt={skill.name} class="w-8 h-8 mb-2 object-contain" />
 				<span class="text-[var(--primary-text)] text-[0.75rem] font-normal text-center">
@@ -123,41 +188,33 @@
 		{/each}
 	</div>
 </section>
-
-<!-- 🟦 PROJECTS SCROLL SECTION -->
+<!-- FEATURED PROJECTS SECTION -->
 <section
-	bind:this={projectSection}
-	class="min-h-screen flex flex-col justify-center items-center bg-[var(--background-secondary)] py-16 px-10 transition-all duration-700 ease-out"
-	style="opacity: {inView ? 1 : 0}; transform: translateY({inView ? 0 : 50}px);"
+  bind:this={projectSection}
+  class="projects-section py-16 px-10 bg-[var(--background-secondary)]"
 >
-	<h2 class="text-2xl font-semibold text-[var(--primary-text)] mb-8 text-center">
-		Featured Projects
-	</h2>
+  <h2 class="text-[2rem] font-bold mb-8 text-center md:text-left">Featured Projects</h2>
+  
+  <div class="grid md:grid-cols-3 gap-8">
+    {#each featuredProjects as project}
+      <ProjectCard {project} />
+    {/each}
+  </div>
 
-	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
-		{#each featuredProjects as project}
-			<ProjectCard {project} />
-		{/each}
-	</div>
-
-	<div class="text-center mt-10">
-		<a href="/projects" class="text-[var(--accent)] text-base hover:underline">
-			View All Projects →
-		</a>
-	</div>
+  <div class="text-center mt-8">
+    <a
+      href="/projects"
+      class="inline-block px-6 py-3 bg-[var(--accent)] text-white font-semibold rounded-lg hover:bg-[var(--accent-dark)] transition"
+    >
+      View All Projects
+    </a>
+  </div>
 </section>
-
 <style>
-	html {
-		scroll-behavior: smooth;
-	}
-	body {
-		scroll-snap-type: y mandatory;
-		overflow-y: scroll;
-	}
-	section {
-		scroll-snap-align: start;
-		scroll-snap-stop: always;
+	canvas {
+		mix-blend-mode: overlay;
+		filter: brightness(1.2) contrast(1.1);
+		opacity: 0.85;
 	}
 	.skill-card:hover {
 		transform: translateY(-4px) scale(1.05);
@@ -165,29 +222,13 @@
 	.dynamic-name {
 		position: relative;
 		display: inline-block;
+		line-height: 1.1;
+		padding-bottom: 0.15em;
 		background: linear-gradient(90deg, #00d4ff, #ff00e0, #00ff9d);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-		animation: glowMove 6s linear infinite;
 		background-size: 300%;
-		transition: text-shadow 0.4s ease, transform 0.4s ease;
-	}
-	.dynamic-name::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		filter: blur(30px);
-		background: inherit;
-		opacity: 0;
-		transition: opacity 0.4s ease;
-		z-index: -1;
-	}
-	.dynamic-name:hover {
-		transform: scale(1.03);
-		text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-	}
-	.dynamic-name:hover::after {
-		opacity: 0.8;
+		animation: glowMove 6s linear infinite;
 	}
 	@keyframes glowMove {
 		0% {

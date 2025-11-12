@@ -8,7 +8,7 @@ export const name = 'Aswanth';
 export const lastName = 'Choyan';
 
 export const description =
-	'Hi, I’m a designer and creative thinker passionate about blending culture, design, and technology to craft meaningful experiences.I love turning ideas into visuals that communicate clearly and inspire the viewer.';
+	'Hi, I’m a Designer, Data Visualizer, Urban Planner and Creative Thinker, passionate about blending culture, design, and technology to craft meaningful experiences.I love turning ideas into visuals that communicate clearly and inspire awe to the viewer.';
 
 export const links: Array<{ platform: Platform; link: string }> = [
 	{ platform: Platform.GitHub, 
