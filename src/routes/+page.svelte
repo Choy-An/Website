@@ -58,8 +58,8 @@
 		let mouse = { x: 0, y: 0 };
 
 		const colors = [
-			['#ff0055', '#ff77aa'], // neon pink gradient
-			['#00d9ff', '#0077ff'], // neon cyan gradient
+			['#ff0055', '#ff77aa'],
+			['#00d9ff', '#0077ff']
 		];
 
 		window.addEventListener('mousemove', (e) => {
@@ -68,15 +68,15 @@
 			for (let i = 0; i < 2; i++) {
 				const [c1, c2] = colors[Math.floor(Math.random() * colors.length)];
 				particles.push({
-					x: mouse.x - 10 + Math.random() * 5, // closer to cursor
+					x: mouse.x - 10 + Math.random() * 5,
 					y: mouse.y - 10 + Math.random() * 5,
 					size: Math.random() * 1.8 + 0.8,
 					color1: c1,
 					color2: c2,
-					length: Math.random() * 15 + 8, // comet streak length
+					length: Math.random() * 15 + 8,
 					speedX: (Math.random() - 0.5) * 2.2,
 					speedY: (Math.random() - 0.5) * 2.2,
-					life: 90,
+					life: 90
 				});
 			}
 		});
@@ -90,7 +90,6 @@
 				p.y += p.speedY;
 				p.life--;
 
-				// Trail gradient
 				const grad = ctx.createLinearGradient(p.x, p.y, p.x - p.length, p.y - p.length);
 				grad.addColorStop(0, p.color1);
 				grad.addColorStop(1, p.color2);
@@ -119,11 +118,16 @@
 </script>
 
 <!-- HERO SECTION -->
-<section class="hero relative min-h-screen flex flex-col md:flex-row justify-center lg:justify-between items-center p-10 overflow-hidden">
+<section
+	class="hero relative min-h-screen flex flex-col md:flex-row justify-center lg:justify-between 
+	md:items-start items-center p-10 overflow-hidden"
+>
+
 	<canvas bind:this={canvasEl} class="absolute inset-0 pointer-events-none z-0"></canvas>
 
-	<div class="relative z-10 md:flex-1 gap-10px">
-		<h1 class="dynamic-name md:text-left text-[3.8rem] md:text-[4.2rem] font-bold mb-5 leading-[1.1] overflow-visible">
+	<!-- LEFT TEXT -->
+	<div class="relative z-10 md:flex-1">
+		<h1 class="dynamic-name md:text-left text-[3.8rem] md:text-[4.2rem] font-bold mb-5 leading-[1.1]">
 			{name} {lastName},
 		</h1>
 
@@ -131,6 +135,7 @@
 			{description}
 		</p>
 
+		<!-- Socials -->
 		<div class="row justify-center md:justify-start py-4 gap-3">
 			{#each links as link}
 				<a
@@ -145,100 +150,187 @@
 		</div>
 	</div>
 
-	<!-- Skills -->
-	<div
-		bind:this={skillsSection}
-		class="grid grid-cols-3 gap-5 mt-10 ml-8 w-full max-w-md justify-items-center relative z-10"
-	>
-		<img
-			src="/aswanth.png"
-			alt="Aswanth"
-			class="absolute inset-0 w-full h-full object-cover opacity-0 hover:opacity-10 transition-opacity duration-700 ease-in-out pointer-events-none rounded-xl"
-			draggable="false"
-		/>
+	<!-- RIGHT GLITCH PORTRAIT -->
+	<div class="glitch-wrapper relative z-10 md:ml-10 mt-6 md:mt-0 md:-mt-4">
+		<img src="/aswanth.png" alt="Aswanth" class="glitch-img" draggable="false" />
+	</div>
+</section>
 
-		{#each skillsItems.slice(0, 9) as skill, i}
+<!-- SKILL BAND SECTION -->
+<section bind:this={skillsSection} class="skill-band w-full py-12">
+	<div class="skill-scroll">
+		{#each skillsItems as skill, i}
 			<div
-				class="skill-card flex flex-col items-center justify-center p-3 rounded-lg 
-				bg-[var(--background-secondary)] hover:bg-[var(--background-tertiary)] 
-				shadow-sm hover:shadow-md transition-all duration-700 ease-out cursor-default 
-				w-[90px] h-[90px] relative"
-				style="opacity: {skillsVisible ? 1 : 0}; transform: translate(
-					{skillsVisible
-						? 0
-						: i % 4 === 0
-						? '-40px'
-						: i % 4 === 1
-						? '40px'
-						: '0px'},
-					{skillsVisible
-						? 0
-						: i % 4 === 2
-						? '-40px'
-						: i % 4 === 3
-						? '40px'
-						: '0px'}
-				); transition-delay: {i * 0.1}s;"
+				class="skill-item"
+				style="
+					opacity: {skillsVisible ? 1 : 0};
+					transform: translateY({skillsVisible ? 0 : '10px'});
+					transition-delay: {i * 0.05}s;
+				"
 			>
-				<img src={skill.logo} alt={skill.name} class="w-8 h-8 mb-2 object-contain" />
-				<span class="text-[var(--primary-text)] text-[0.75rem] font-normal text-center">
-					{skill.name}
-				</span>
+				<img src={skill.logo} alt={skill.name} />
+				<span>{skill.name}</span>
 			</div>
 		{/each}
 	</div>
 </section>
-<!-- FEATURED PROJECTS SECTION -->
-<section
-  bind:this={projectSection}
-  class="projects-section py-16 px-10 bg-[var(--background-secondary)]"
->
-  <h2 class="text-[2rem] font-bold mb-8 text-center md:text-left">Featured Projects</h2>
-  
-  <div class="grid md:grid-cols-3 gap-8">
-    {#each featuredProjects as project}
-      <ProjectCard {project} />
-    {/each}
-  </div>
 
-  <div class="text-center mt-8">
-    <a
-      href="/projects"
-      class="inline-block px-6 py-3 bg-[var(--accent)] text-white font-semibold rounded-lg hover:bg-[var(--accent-dark)] transition"
-    >
-      View All Projects
-    </a>
-  </div>
+<!-- PROJECTS -->
+<section bind:this={projectSection} class="projects-section py-16 px-10 bg-[var(--background-secondary)]">
+	<h2 class="text-[2rem] font-bold mb-8 text-center md:text-left">Featured Projects</h2>
+
+	<div class="grid md:grid-cols-3 gap-8">
+		{#each featuredProjects as project}
+			<ProjectCard {project} />
+		{/each}
+	</div>
+
+	<div class="text-center mt-8">
+		<a href="/projects"
+			class="inline-block px-6 py-3 bg-[var(--accent)] text-white font-semibold rounded-lg hover:bg-[var(--accent-dark)] transition">
+			View All Projects
+		</a>
+	</div>
 </section>
+
 <style>
 	canvas {
-		mix-blend-mode: overlay;
-		filter: brightness(1.2) contrast(1.1);
-		opacity: 0.85;
-	}
-	.skill-card:hover {
-		transform: translateY(-4px) scale(1.05);
-	}
-	.dynamic-name {
-		position: relative;
-		display: inline-block;
-		line-height: 1.1;
-		padding-bottom: 0.15em;
-		background: linear-gradient(90deg, #00d4ff, #ff00e0, #00ff9d);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 300%;
-		animation: glowMove 6s linear infinite;
-	}
-	@keyframes glowMove {
-		0% {
-			background-position: 0% 50%;
-		}
-		50% {
-			background-position: 100% 50%;
-		}
-		100% {
-			background-position: 0% 50%;
-		}
-	}
+	mix-blend-mode: overlay;
+	filter: brightness(1.2) contrast(1.1);
+	opacity: 0.85;
+}
+
+/* --- NAME GRADIENT ANIMATION --- */
+.dynamic-name {
+	position: relative;
+	display: inline-block;
+	line-height: 1.1;
+	padding-bottom: 0.15em;
+	background: linear-gradient(90deg, #00d4ff, #ff00e0, #00ff9d);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-size: 300%;
+	animation: glowMove 6s linear infinite;
+}
+
+@keyframes glowMove {
+	0%   { background-position: 0% 50%; }
+	50%  { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+/* =====================================================
+   REAL GLITCH PORTRAIT (RGB SPLIT + SCANLINES + DRIFT)
+   ===================================================== */
+
+.glitch-wrap {
+	position: relative;
+	width: 340px;
+	aspect-ratio: 3/4;
+	border-radius: 1rem;
+	overflow: hidden;
+}
+
+/* Base + RGB layers stacked */
+.glitch-base,
+.glitch-r,
+.glitch-g,
+.glitch-b {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: inherit;
+	pointer-events: none;
+}
+
+/* Idle scanline drift for all layers */
+@keyframes idleGlitchDrift {
+	0%   { transform: translate(0px, 0px); }
+	30%  { transform: translate(1px, -1px); }
+	60%  { transform: translate(-1px, 1px); }
+	100% { transform: translate(0px, 0px); }
+}
+
+.glitch-wrap img {
+	animation: idleGlitchDrift 4.5s ease-in-out infinite;
+	filter: contrast(1.06);
+}
+
+/* RGB layers (hidden until hover) */
+.glitch-r,
+.glitch-g,
+.glitch-b {
+	mix-blend-mode: screen;
+	opacity: 0.0;
+	transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Hover glitch amplification */
+.glitch-wrap:hover .glitch-r {
+	opacity: 0.45;
+	transform: translateX(-3px);
+}
+.glitch-wrap:hover .glitch-g {
+	opacity: 0.45;
+	transform: translateX(3px);
+}
+.glitch-wrap:hover .glitch-b {
+	opacity: 0.45;
+	transform: translateY(3px);
+}
+
+/* Subtle scanline overlay */
+.glitch-wrap::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+	background: repeating-linear-gradient(
+		to bottom,
+		rgba(255,255,255,0.04) 0px,
+		rgba(255,255,255,0.04) 1px,
+		transparent 1px,
+		transparent 3px
+	);
+	pointer-events: none;
+	mix-blend-mode: overlay;
+}
+
+/* =====================================================
+   SKILL BAND
+   ===================================================== */
+
+.skill-band {
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+}
+
+.skill-scroll {
+	display: flex;
+	gap: 2rem;
+	padding: 1rem 2rem;
+	overflow-x: auto;
+	scrollbar-width: none;
+}
+.skill-scroll::-webkit-scrollbar {
+	display: none;
+}
+
+.skill-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+	min-width: 85px;
+	transform: translateY(10px);
+	transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.skill-item img {
+	width: 36px;
+	height: 36px;
+}
+
 </style>
