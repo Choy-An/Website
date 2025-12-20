@@ -5,6 +5,52 @@ import type { Project } from '../types';
 export const items: Array<Project> = [
 	{
 		slug: 'Project 1',
+		color: '#5e95e3',
+		description:
+			'A complete redesign of Kerala Fiber Optic Network’s digital platform, focused on improving accessibility, trust, and clarity for users across home, corporate, and institutional broadband services. The project enhances visual hierarchy, streamlines service discovery, and establishes a consistent design language rooted in Kerala’s digital development ethos. The goal was to move away from a purely bureaucratic look and create a user-centered interface that reflects transparency, reliability, and modern connectivity.',
+		shortDescription:
+			'A complete redesign of Kerala Fiber Optic Network’s digital platform, focused on improving accessibility, trust, and clarity for users across home, corporate, and institutional broadband services. The project enhances visual hierarchy, streamlines service discovery, and establishes a consistent design language rooted in Kerala’s digital development ethos. The goal was to move away from a purely bureaucratic look and create a user-centered interface that reflects transparency, reliability, and modern connectivity.',
+		links: [{ to: '', label: 'Figma' }],
+		banner: Assets.KFON,
+		logo: Assets.Hunga,
+		name: 'KFON',
+		period: {
+			from: new Date('2025-09-21'), to: new Date()
+		},
+		skills: getSkills('figma'),
+		type: 'Service Design',
+		screenshots: [
+			{src: '/images/KFON1.webp'},
+	{src: '/images/KFON2.webp'},
+	{src: '/images/KFON3.webp'},
+	{src: '/images/KFON4.webp'},
+	{src: '/images/KFON5.webp'},
+	{src: '/images/KFON6.webp'},
+	{src: '/images/KFON7.webp'},
+	{src: '/images/KFON8.webp'},
+	{src: '/images/KFON9.webp'},
+	{src: '/images/KFON10.webp'},
+	{src: '/images/KFON11.webp'},
+	{src: '/images/KFON12.webp'},
+	{src: '/images/KFON13.webp'},
+	{src: '/images/KFON14.webp'},
+	{src: '/images/KFON15.webp'},
+	{src: '/images/KFON16.webp'},
+	{src: '/images/KFON17.webp'},
+	{src: '/images/KFON18.webp'},
+	{src: '/images/KFON19.webp'},
+	{src: '/images/KFON20.webp'},
+	{src: '/images/KFON21.webp'},
+	{src: '/images/KFON22.webp'},
+	{src: '/images/KFON23.webp'},
+	{src: '/images/KFON24.webp'},
+	{src: '/images/KFON25.webp'},
+	{src: '/images/KFON26.webp'},
+	{src: '/images/KFON27.webp'},
+		],
+	},
+	{
+		slug: 'Project 2',
 		color: 'red',
 		description:
 			'An exploration of how Sacred Groves (Kaavus) in Kannur have transformed into built structures. The project studies their architecture and iconography, presented through research, case studies, and visual documentation.',
@@ -48,7 +94,7 @@ export const items: Array<Project> = [
         prototype: 'https://embed.figma.com/proto/00XBqRMcsbuV0xD8Ef61CA/Design-Project-1?node-id=653-3833&scaling=scale-down&content-scaling=fixed&page-id=653%3A3832&embed-host=share" ', // your embed link here
 	},
 	{
-		slug: 'Project 2',
+		slug: 'Project 3',
 		color: 'yellow',
 		description:
 			'Biodiversity is vanishing at an alarming rate, with many species moving closer to extinction. This project visualizes the survival status of 24 selected species from India, chosen to reflect different habitats and IUCN Red List categories. Using a layered paper-cut lightbox, the arrangement shows species sinking deeper as their threat level rises, and color bands indicate population size. The work combines data and emotion to make the crisis of extinction tangible and immediate.',
@@ -94,7 +140,7 @@ export const items: Array<Project> = [
 		],
 	},
 		{
-		slug: 'Project 3',
+		slug: 'Project 4',
 		color: '#2F87FF',
 		description:
 			'Redesign of the mAadhaar app aimed at improving usability, trust, and accessibility in India’s digital identity system. The project refined key user flows like address updates & verification through a clean, consistent interface. Developed collaboratively under industry guidance, it strengthened my understanding of end-to-end UX processes and design systems.',
@@ -139,7 +185,7 @@ export const items: Array<Project> = [
 		prototype: 'https://embed.figma.com/proto/1DCepfwiBkdBuw6riiw67b/Maadhaar?node-id=34-8079&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=18%3A19677&embed-host=share' // your embed link here
 	},
 		{
-		slug: 'Project 4',
+		slug: 'Project 5',
 		color: '#6CADDF',
 		description:
 			'A data-driven visual narrative exploring how Manchester City’s rise after its oil-backed takeover blurs the line between money, merit, and modern football.',
@@ -172,7 +218,7 @@ export const items: Array<Project> = [
 		],
 	},
 		{
-		slug: 'Project 5',
+		slug: 'Project 6',
 		color: '#008000',
 		description:
 			'A Mahjong-inspired data visualization that transforms personal interests and traits into a layered spatial portrait — part game, part identity system.',
@@ -208,7 +254,7 @@ export const items: Array<Project> = [
 		
 	},
 		{
-		slug: 'Project 6',
+		slug: 'Project 7',
 		color: '#FFA500',
 		description:
 			'A data-driven homage translating Ladislav Sutnar’s design principles into a living visual system that celebrates structure, clarity, and modernist rhythm.',
@@ -245,13 +291,13 @@ export const items: Array<Project> = [
 		],
 	},
 	{
-		slug: 'Project 7',
+		slug: 'Project 8',
 		color: '#5e95e3',
 		description:
 			'This project visualizes the 2022 Hunga Tonga-Hunga Haʻapai eruption - from its underwater build-up to the record-breaking 57 km plume and its global aftermath. Using scientific records and satellite data, I built a timeline-based narrative with layered visuals and annotations to reveal how the volcano formed, evolved, and erupted, and to compare it with other historic eruptions.',
 		shortDescription:
 			'This project visualizes the 2022 Hunga Tonga-Hunga Haʻapai eruption - from its underwater build-up to the record-breaking 57 km plume and its global aftermath. Using scientific records and satellite data, I built a timeline-based narrative with layered visuals and annotations to reveal how the volcano formed, evolved, and erupted, and to compare it with other historic eruptions.',
-		links: [{ to: '', label: 'GitHub' }],
+		links: [{ to: 'https://meek-lokum-c52335.netlify.app/', label: 'Narrative' }],
 		banner: Assets.Tonga,
 		logo: Assets.Hunga,
 		name: 'Hunga Tonga',
@@ -260,26 +306,8 @@ export const items: Array<Project> = [
 		},
 		skills: getSkills('figma', 'css', 'html','svelte'),
 		type: 'Data-Driven Narrative',
-		status: 'wip'
 	},
-	{
-		slug: 'Project 8',
-		color: '#5e95e3',
-		description:
-			'A complete redesign of Kerala Fiber Optic Network’s digital platform, focused on improving accessibility, trust, and clarity for users across home, corporate, and institutional broadband services. The project enhances visual hierarchy, streamlines service discovery, and establishes a consistent design language rooted in Kerala’s digital development ethos. The goal was to move away from a purely bureaucratic look and create a user-centered interface that reflects transparency, reliability, and modern connectivity.',
-		shortDescription:
-			'A complete redesign of Kerala Fiber Optic Network’s digital platform, focused on improving accessibility, trust, and clarity for users across home, corporate, and institutional broadband services. The project enhances visual hierarchy, streamlines service discovery, and establishes a consistent design language rooted in Kerala’s digital development ethos. The goal was to move away from a purely bureaucratic look and create a user-centered interface that reflects transparency, reliability, and modern connectivity.',
-		links: [{ to: '', label: 'Figma' }],
-		banner: Assets.KFON,
-		logo: Assets.Hunga,
-		name: 'KFON',
-		period: {
-			from: new Date('2025-09-21'), to: new Date()
-		},
-		skills: getSkills('figma'),
-		type: 'Service Re-Design',
-		status: 'wip'
-	}
+	
 ];
 
 export const title = 'Projects';
