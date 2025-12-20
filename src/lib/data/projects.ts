@@ -7,9 +7,9 @@ export const items: Array<Project> = [
 		slug: 'Project 1',
 		color: '#5e95e3',
 		description:
-			'A complete redesign of Kerala Fiber Optic Network’s digital platform, focused on improving accessibility, trust, and clarity for users across home, corporate, and institutional broadband services. The project enhances visual hierarchy, streamlines service discovery, and establishes a consistent design language rooted in Kerala’s digital development ethos. The goal was to move away from a purely bureaucratic look and create a user-centered interface that reflects transparency, reliability, and modern connectivity.',
+			'A system-focused UX case study exploring how a call-based support operation can be transformed into a structured, SLA-driven internal support system. The project focuses on agent and supervisor workflows, emphasizing visibility, accountability, and scalable decision-making in high-pressure service environments.',
 		shortDescription:
-			'A complete redesign of Kerala Fiber Optic Network’s digital platform, focused on improving accessibility, trust, and clarity for users across home, corporate, and institutional broadband services. The project enhances visual hierarchy, streamlines service discovery, and establishes a consistent design language rooted in Kerala’s digital development ethos. The goal was to move away from a purely bureaucratic look and create a user-centered interface that reflects transparency, reliability, and modern connectivity.',
+			'A system-focused UX case study exploring how a call-based support operation can be transformed into a structured, SLA-driven internal support system. The project focuses on agent and supervisor workflows, emphasizing visibility, accountability, and scalable decision-making in high-pressure service environments.',
 		links: [{ to: '', label: 'Figma' }],
 		banner: Assets.KFON,
 		logo: Assets.Hunga,
